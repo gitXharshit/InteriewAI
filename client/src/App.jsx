@@ -11,7 +11,7 @@ import axios from 'axios';
 import { setUserData } from './redux/userSLice';
 import { useDispatch } from 'react-redux';
 
-export const ServerUrl = "http://localhost:8000";
+export const ServerUrl = "https://interiewai.onrender.com";
 
 function App() {
   const dispatch = useDispatch()
