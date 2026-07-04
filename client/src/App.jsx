@@ -8,10 +8,10 @@ import Pricing from './pages/Pricing';
 import InterviewReport from './pages/InterviewReport';
 import {useEffect} from 'react'
 import axios from 'axios';
-import { setUserData } from './redux/userSLice';
+import { setUserData } from './redux/userSlice';
 import { useDispatch } from 'react-redux';
 
-export const ServerUrl = "http://localhost:8000";
+export const ServerUrl = "https://interiewai.onrender.com";
 
 function App() {
   const dispatch = useDispatch()
