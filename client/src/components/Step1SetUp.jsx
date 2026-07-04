@@ -85,20 +85,20 @@ function Step1SetUp({onStart}) {
        initial = {{opacity: 0}}
        animate = {{opacity: 1}}
        transition={{duration: 0.6}}
-       className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to gray-200 px-4'>
+       className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 to-gray-200 dark:from-slate-950 dark:to-slate-900 px-4 transition-colors'>
 
-        <div className='w-full max-w-6xl bg-white rounded-3xl shadow-2xl grid md:grid-cols-2 overflow-hidden'>
+        <div className='w-full max-w-6xl bg-white dark:bg-slate-900 rounded-3xl shadow-2xl grid md:grid-cols-2 overflow-hidden'>
            <motion.div
               initial = {{x: -80,opacity: 0}}
               animate = {{x: 0,opacity: 1}}
               transition={{duration: 0.7}}
-              className='relative bg-gradient-to-br from-green-50 to-green-100 p-12 flex flex-col justify-center'>
+              className='relative bg-gradient-to-br from-green-50 to-green-100 dark:from-emerald-950 dark:to-slate-900 p-12 flex flex-col justify-center'>
 
-              <h2 className='text-4xl font-bold text-gray-800 mb-6'>
+              <h2 className='text-4xl font-bold text-gray-800 dark:text-slate-100 mb-6'>
                 Start Your AI Interview
               </h2>
 
-              <p className='text-gray-600 mb-10'>
+              <p className='text-gray-600 dark:text-slate-300 mb-10'>
                 Practice real interview scenarios powered by AI.
                 Improve communication,technical skills, and confidence.
               </p>
@@ -124,10 +124,10 @@ function Step1SetUp({onStart}) {
                        animate = {{y: 0,opacity: 1}}
                        transition={{delay:0.3 + index*0.15}}
                        whileHover = {{scale:1.03}}
-                       className='flex items-center space-x-4 bg-white p-4 rounded-xl shadow-sm cursor-pointer'
+                       className='flex items-center space-x-4 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm cursor-pointer'
                     >
                       {item.icon}
-                      <span className='text-gray-700 font-medium'>{item.text}</span>
+                      <span className='text-gray-700 dark:text-slate-200 font-medium'>{item.text}</span>
 
                     </motion.div>
                   ))
@@ -138,9 +138,9 @@ function Step1SetUp({onStart}) {
               initial = {{x: 80,opacity: 0}}
               animate = {{x: 0,opacity: 1}}
               transition={{duration: 0.7}}
-              className='p-12 bg-white'>
+              className='p-12 bg-white dark:bg-slate-900'>
 
-                <h2 className='text-3xl font-bold text-gray-800 mb-8'>
+                <h2 className='text-3xl font-bold text-gray-800 dark:text-slate-100 mb-8'>
                     Interview Setup
                 </h2>
 
@@ -149,7 +149,7 @@ function Step1SetUp({onStart}) {
                   <FaUserTie className='absolute top-4 left-4 text-gray-400'/>
 
                   <input type='text' placeholder='Enter role'
-                   className='w-full pl-12 pr-4 py-3 border border-gray-200
+                   className='w-full pl-12 pr-4 py-3 border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-100 placeholder:text-gray-400
                    rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition'
                    onChange={(e)=>setRole(e.target.value)} value={role}/>
                 </div>
@@ -158,14 +158,14 @@ function Step1SetUp({onStart}) {
                   <FaBriefcase className='absolute top-4 left-4 text-gray-400'/>
 
                   <input type='text' placeholder='Experience (e.g. 2 years)'
-                   className='w-full pl-12 pr-4 py-3 border border-gray-200
+                   className='w-full pl-12 pr-4 py-3 border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-100 placeholder:text-gray-400
                    rounded-xl focus:ring-2 focus:ring-green-500 outline-none transition'
                    onChange={(e)=>setExperience(e.target.value)} value={experience}/>
 
                 </div>
                 <select value={mode} 
                   onChange={(e)=>setMode(e.target.value)}
-                  className='w-full py-3 px-4 border border-gray-200 rounded-xl  focus:ring-2 focus:ring-green-500 outline-none transition'>
+                  className='w-full py-3 px-4 border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-100 rounded-xl  focus:ring-2 focus:ring-green-500 outline-none transition'>
                     <option value="Technical">Technical Interview</option>
                     <option value="HR">HR Interview</option>
                   </select>
@@ -174,7 +174,7 @@ function Step1SetUp({onStart}) {
                     <motion.div 
                     whileHover={{scale:1.02}}
                     onClick={()=>document.getElementById("resumeUpload").click()}
-                    className='border-2 border-dashed border-gray-300 rounded-xl p-8 text-center cursor-pointer hover:border-green-500 hover:bg-green-50 transition'>
+                    className='border-2 border-dashed border-gray-300 dark:border-slate-700 rounded-xl p-8 text-center cursor-pointer hover:border-green-500 hover:bg-green-50 dark:hover:bg-emerald-950 transition'>
                         
                     <FaFileUpload className='text-4xl mx-auto text-green-600 mb-3'/>
 
@@ -184,7 +184,7 @@ function Step1SetUp({onStart}) {
                     className='hidden'
                     onChange={(e)=>setResumeFile(e.target.files[0])} />
 
-                    <p className='text-gray-600 font-medium' >
+                    <p className='text-gray-600 dark:text-slate-300 font-medium' >
                       {resumeFile ? resumeFile.name : "Click to upload resume(Optional)"}
                     </p>
 
@@ -193,7 +193,7 @@ function Step1SetUp({onStart}) {
                       whileHover = {{scale:1.02}}
                       onClick={(e)=>{e.stopPropagation();handleUploadResume()}}
 
-                        className= 'mt-4 bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-800 transition'>
+                        className= 'mt-4 bg-gray-900 dark:bg-emerald-600 text-white px-5 py-2 rounded-lg hover:bg-gray-800 dark:hover:bg-emerald-700 transition'>
                         
                             {
                               analyzing ? "Analyzing..." : "Analyze Resume"
@@ -205,16 +205,16 @@ function Step1SetUp({onStart}) {
                           <motion.div
                              initial={{ opacity:0, y: 20}}
                              animate={{ opacity:1, y:0}}
-                             className='bg-gray-50 border border-gray-200 rounded-xl p-5 space-y-4'  >
-                              <h3 className='tect-lg font-semibold text-gray-800'>
+                             className='bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-5 space-y-4'  >
+                              <h3 className='tect-lg font-semibold text-gray-800 dark:text-slate-100'>
                                 Resume Analysis Result
                               </h3>
                                  {projects.length > 0 && (
                                    <div>
-                                    <p className='font-medium text-gray-700 mb-1'>
+                                    <p className='font-medium text-gray-700 dark:text-slate-300 mb-1'>
                                       Projects:
                                     </p>
-                                    <ul className='list-disc list-inside text-gray-600 space-y-1'>
+                                    <ul className='list-disc list-inside text-gray-600 dark:text-slate-400 space-y-1'>
                                       {projects.map((p,i)=>(
                                         <li key={i}>{p}</li>
                                       ))}
@@ -226,12 +226,12 @@ function Step1SetUp({onStart}) {
 
                                  {skills.length > 0 && (
                                    <div>
-                                    <p className='font-medium text-gray-700 mb-1'>
+                                    <p className='font-medium text-gray-700 dark:text-slate-300 mb-1'>
                                       Skills:
                                     </p>
                                     <div className='flex flex-wrap gap-2'>
                                       {skills.map((s,i)=>(
-                                        <span key={i} className='bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm'>{s}</span>
+                                        <span key={i} className='bg-green-100 dark:bg-emerald-950 text-green-700 dark:text-emerald-300 px-3 py-1 rounded-full text-sm'>{s}</span>
                                       ))}
                                     </div>
                                    </div>

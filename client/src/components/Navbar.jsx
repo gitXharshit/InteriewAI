@@ -33,18 +33,18 @@ function Navbar() {
      }
   }
   return (
-    <div className='bg-[#f3f3f3] flex justify-center px-4 pt-6'>
+    <div className='bg-[#f3f3f3] dark:bg-slate-950 flex justify-center px-4 pt-6 transition-colors'>
        <motion.div
          initial = {{opacity:0, y:-40}}
          animate = {{opacity:1, y:0}}
          transition = {{duration: 0.3}}
-         className='w-full max-w-6xl bg-white rounded-[24px] shadow-sm border
-         border-gray-200 px-8 py-4 flex justify-between items-center relative'>
+         className='w-full max-w-6xl bg-white dark:bg-slate-900 rounded-[24px] shadow-sm border
+         border-gray-200 dark:border-slate-800 px-8 py-4 flex justify-between items-center relative transition-colors'>
             <div className='flex items-center gap-3 cursor-pointer'>
-               <div className='bg-black text-white p-2 rounded-lg'>
+               <div className='bg-black dark:bg-emerald-500 text-white p-2 rounded-lg'>
                    <BsRobot size={18}/>
                </div>
-               <h1 className='font-semibold hidden md:block text-lg'>INTERVIEW.AI</h1>
+               <h1 className='font-semibold hidden md:block text-lg dark:text-slate-100'>INTERVIEW.AI</h1>
 
             </div>
 
@@ -57,14 +57,14 @@ function Navbar() {
                      }
                     setShowCreditPopup(!showCreditPopup);
                      setShowUserPopup(false)
-                   }} className='flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-full text-md hover:bg-gray-200 transition'>
+                   }} className='flex items-center gap-2 bg-gray-100 dark:bg-slate-800 px-4 py-2 rounded-full text-md hover:bg-gray-200 dark:hover:bg-slate-700 dark:text-slate-100 transition'>
                        <BsCoin size={20}/>
                        {userData?.credits || 0}
                    </button>
                    {showCreditPopup && (
-                     <div className='absolute right-[-50px] mt-3 w-64 bg-white shadow-xl border border-gray-200 rounded p-5 z-50'>
-                        <p className='text-sm text-gray-600 mb-4'>Need more credits to continue interviews?</p>
-                        <button onClick={()=>navigate("/pricing")} className='w-full bg-black text-white py-2 rounded-lg text-sm'>Buy more credits</button>
+                     <div className='absolute right-[-50px] mt-3 w-64 bg-white dark:bg-slate-900 shadow-xl border border-gray-200 dark:border-slate-700 rounded p-5 z-50'>
+                        <p className='text-sm text-gray-600 dark:text-slate-300 mb-4'>Need more credits to continue interviews?</p>
+                        <button onClick={()=>navigate("/pricing")} className='w-full bg-black dark:bg-emerald-600 text-white py-2 rounded-lg text-sm'>Buy more credits</button>
 
                      </div>
                    )}
@@ -79,16 +79,16 @@ function Navbar() {
                         setShowUserPopup(!showUserPopup);
                         setShowCreditPopup(false)
                      }}
-                     className='w-9 h-9 bg-black text-white rounded-full flex items-center justify-center font-semibold'>
+                     className='w-9 h-9 bg-black dark:bg-emerald-600 text-white rounded-full flex items-center justify-center font-semibold'>
                      {userData ? userData?.name.slice(0,1).toUpperCase() : <FaUserAstronaut size={16}/>}
                        
                      </button>
                      {showUserPopup && (
-                        <div className='absolute right-0 mt-3 w-48 bg-white shadow-xl border border-gray-200 rounded-xl p-4 z-50'>
+                        <div className='absolute right-0 mt-3 w-48 bg-white dark:bg-slate-900 shadow-xl border border-gray-200 dark:border-slate-700 rounded-xl p-4 z-50'>
                           <p className='text-md text-blue-500 font-medium mb-1'>{userData?.name}</p>
 
                           <button onClick={()=>navigate("/history")}
-                            className='w-full text-left text-sm py-2 hover:text-black text-gray-600'>Interview History</button>
+                            className='w-full text-left text-sm py-2 hover:text-black dark:hover:text-white text-gray-600 dark:text-slate-300'>Interview History</button>
                           <button onClick={handleLogout} className='w-full text-left text-sm py-2 flex items-center gap-2 text-red-500'>
                             <HiOutlineLogout size={16}/>
                             Logout

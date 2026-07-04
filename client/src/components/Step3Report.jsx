@@ -11,8 +11,8 @@ import autoTable from "jspdf-autotable"
 function Step3Report({report}) {
   if(!report){
      return (
-      <div className='min-h-screen flex items-center justify-center'>
-          <p className='text-gray-500 text-lg'> Loading report...</p>
+      <div className='min-h-screen flex items-center justify-center bg-white dark:bg-slate-950'>
+          <p className='text-gray-500 dark:text-slate-400 text-lg'> Loading report...</p>
       </div>
      )
   }
@@ -171,20 +171,20 @@ function Step3Report({report}) {
    };
 
   return (
-    <div className='min-h-screen bg-linear-to-br from-gray-50 to-green-50 px-4 sm:px-6 lg:px-10 py-8 '>
+    <div className='min-h-screen bg-linear-to-br from-gray-50 to-green-50 dark:from-slate-950 dark:to-emerald-950 px-4 sm:px-6 lg:px-10 py-8 transition-colors'>
       <div className = 'mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
             <div className='md:mb-10 w-full flex items-start gap-4 '>
                     <button 
                      onClick={()=>navigate("/history")}
-                      className='mt-1 p-3 rounded-full bg-white shadow hover:shadow-md transition'>
-                        <FaArrowLeft className='text-gray-600'/>
+                      className='mt-1 p-3 rounded-full bg-white dark:bg-slate-900 shadow hover:shadow-md transition'>
+                        <FaArrowLeft className='text-gray-600 dark:text-slate-300'/>
                     </button>
               
                 <div>
-                  <h1 className='text-3xl font-bold flex-nowrap text-gray-800'>
+                  <h1 className='text-3xl font-bold flex-nowrap text-gray-800 dark:text-slate-100'>
                          Interview Analytics Dashboard
                   </h1>
-                  <p className='text-gray-500 mt-2'>
+                  <p className='text-gray-500 dark:text-slate-400 mt-2'>
                          AI Powered Interview Insights
                    </p>
                               
@@ -203,8 +203,8 @@ function Step3Report({report}) {
             <motion.div
              initial={{ opacity: 0 }}
              animate={{ opacity: 1}}
-             className='bg-white rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 text-center'> 
-               <h3 className='text-gray-500 mb-4 sm:mb-6 text-sm sm:text-base'>
+             className='bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8 text-center'> 
+               <h3 className='text-gray-500 dark:text-slate-400 mb-4 sm:mb-6 text-sm sm:text-base'>
                  Overall Performance
                </h3>
 
@@ -220,13 +220,13 @@ function Step3Report({report}) {
                       })}
                       />
                     </div>  
-              <p className='text-gray-400 mt-3 text-xs sm:text-sm'>Out of 10</p> 
+              <p className='text-gray-400 dark:text-slate-500 mt-3 text-xs sm:text-sm'>Out of 10</p> 
 
               <div className='mt-4'>
-                <p className='font-semibold text-gray-800 text-sm sm:text-base'>
+                <p className='font-semibold text-gray-800 dark:text-slate-100 text-sm sm:text-base'>
                   {performanceText}
                 </p>
-                <p className='text-gray-500 text-xs sm:text-sm mt-1'>
+                <p className='text-gray-500 dark:text-slate-400 text-xs sm:text-sm mt-1'>
                   {shortTagLine}
                 </p>
               </div>
@@ -234,20 +234,20 @@ function Step3Report({report}) {
             <motion.div
              initial={{ opacity: 0 }}
              animate={{ opacity: 1}}
-             className='bg-white rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8'>
-              <h3 className='text-base sm:text-lg font-semibold text-gray-700 mb-6'>
+             className='bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-lg p-6 sm:p-8'>
+              <h3 className='text-base sm:text-lg font-semibold text-gray-700 dark:text-slate-200 mb-6'>
                 Skill Evaluation
               </h3>
               <div className='space-y-5'>
                 {
                   skills.map((s,i) => (
                     <div key={i}>
-                       <div className='flex justify-between mb-2 text-sm sm:text-base'>
+                       <div className='flex justify-between mb-2 text-sm sm:text-base text-gray-700 dark:text-slate-300'>
                         <span >{s.label}</span>
                         <span className='font-semibold text-green-600'>{s.value}</span>
                        </div>
 
-                       <div className='bg-gray-200 h-2 sm:h-3 rounded-full'>
+                       <div className='bg-gray-200 dark:bg-slate-700 h-2 sm:h-3 rounded-full'>
                           <div className='bg-green-500 h-full rounded-full'
                              style={{width: `${s.value*10}%`}}>
 
@@ -268,9 +268,9 @@ function Step3Report({report}) {
              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1}}
-                className='bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8'
+                className='bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8'
              >
-               <h3 className='text-base sm:text-lg font-semibold text-gray-700 mb-4 sm:mb-6'>
+               <h3 className='text-base sm:text-lg font-semibold text-gray-700 dark:text-slate-200 mb-4 sm:mb-6'>
                      Performance Trend
                </h3>
 
@@ -296,32 +296,32 @@ function Step3Report({report}) {
              <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1}}
-                className='bg-white rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8 '>
-                <h3 className='text-base sm:text-lg font-semibold text-gray-700 mb-6'>
+                className='bg-white dark:bg-slate-900 rounded-2xl sm:rounded-3xl shadow-lg p-5 sm:p-8 '>
+                <h3 className='text-base sm:text-lg font-semibold text-gray-700 dark:text-slate-200 mb-6'>
                   Question Breakdown
                 </h3>
                 <div className='space-y-6'>
                     {questionWiseScore.map((q,i)=>(
-                      <div key={i} className='bg-gray-50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200'>
+                      <div key={i} className='bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-200 dark:border-slate-700'>
                         <div className='flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3 mb-4'>
                            <div>
-                              <p className='text-xs text-gray-400'>
+                              <p className='text-xs text-gray-400 dark:text-slate-500'>
                                    Question {i+1}
                               </p>
 
-                              <p className='font-semibold text-gray-800 text-sm sm:text-base leading-relaxed'>
+                              <p className='font-semibold text-gray-800 dark:text-slate-100 text-sm sm:text-base leading-relaxed'>
                                  {q.question || "Question not available"}
                               </p>
                            </div>
-                           <div className='bg-green-100 text-green-600 px-3 py-1 rounded-full font-bold text-xs sm:text-sm w-fit'>
+                           <div className='bg-green-100 dark:bg-emerald-950 text-green-600 dark:text-emerald-300 px-3 py-1 rounded-full font-bold text-xs sm:text-sm w-fit'>
                               {q.score ?? 0}/10
                            </div>
                         </div>
-                        <div className='bg-green-50 border border-green-200 p-4 rounded-lg'>
-                             <p className='text-xs text-green-600 font-semibold mb-1'>
+                        <div className='bg-green-50 dark:bg-emerald-950 border border-green-200 dark:border-emerald-800 p-4 rounded-lg'>
+                             <p className='text-xs text-green-600 dark:text-emerald-300 font-semibold mb-1'>
                                    AI feedback
                              </p>
-                             <p className='text-sm text-gray-700 leading-relaxed'>
+                             <p className='text-sm text-gray-700 dark:text-slate-300 leading-relaxed'>
                                  {q.feedback && q.feedback.trim() !== "" ?
                                     q.feedback
                                    : "No feedback available for this question."}
